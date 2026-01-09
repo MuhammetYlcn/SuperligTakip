@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<StackPane fx:id="rootPane" prefHeight="600.0" prefWidth="400.0" stylesheets="@StatsStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.grupdort.superligtakip.controller.AssistStatsController">
+    <children>
+        <VBox fx:id="mainContent" style="-fx-background-color: #121212;">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="header-background">
+                    <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                    <children>
+                        <Button onAction="#handleMenuButton" styleClass="menu-button">
+                            <graphic><SVGPath content="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="WHITE" /></graphic>
+                        </Button>
+                        <Label text="Asist Krallığı" textFill="WHITE">
+                            <font><Font name="System Bold" size="20.0" /></font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10.0" style="-fx-background-color: #1a1a1a; -fx-padding: 10 15; -fx-border-color: #333; -fx-border-width: 0 0 1 0;">
+                    <children>
+                        <Label alignment="CENTER" prefWidth="35.0" style="-fx-text-fill: #888; -fx-font-size: 11px;" text="#" />
+                        <Label maxWidth="Infinity" style="-fx-text-fill: #888; -fx-font-size: 11px;" text="OYUNCU / TAKIM" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER" prefWidth="50.0" style="-fx-text-fill: #888; -fx-font-size: 11px;" text="MAÇ" />
+                        <Label alignment="CENTER" prefWidth="50.0" style="-fx-text-fill: #888; -fx-font-size: 11px;" text="ASİST" />
+                    </children>
+                </HBox>
+
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="dark-scroll" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox fx:id="listContainer" spacing="2.0" style="-fx-background-color: #121212;" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+        <fx:include fx:id="sidebarComponent" source="../SidebarView/Sidebar.fxml" />
+    </children>
+</StackPane>

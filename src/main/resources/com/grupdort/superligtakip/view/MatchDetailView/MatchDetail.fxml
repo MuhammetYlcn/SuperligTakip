@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="600.0" prefWidth="400.0" stylesheets="@MatchDetailStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.grupdort.superligtakip.controller.MatchDetailController">
+
+    <VBox fx:id="mainContent" styleClass="root">
+        <VBox styleClass="header-panel">
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <padding> <Insets bottom="5" left="10" right="10" top="10" /> </padding>
+                <Button fx:id="btnBack" onAction="#handleBack" styleClass="icon-button" text="◀" />
+                <Label maxWidth="1.7976931348623157E308" text="Maç Detayı" textFill="#b3b3b3" HBox.hgrow="ALWAYS">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+                <Button fx:id="menuButton" onAction="#handleMenuButton" styleClass="icon-button" text="☰" />
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="20.0">
+                <padding> <Insets bottom="20" top="10" /> </padding>
+                <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+                    <ImageView fx:id="homeLogo" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                    <Label fx:id="homeName" styleClass="team-name" text="Ev Sahibi" wrapText="true" textAlignment="CENTER"/>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <Label fx:id="scoreLabel" styleClass="score-label" text="- : -" />
+                    <Label fx:id="statusLabel" styleClass="status-label" text="Başlamadı" />
+                    <Label fx:id="minuteLabel" styleClass="minute-label" text="" />
+                </VBox>
+                <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+                    <ImageView fx:id="awayLogo" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                    <Label fx:id="awayName" styleClass="team-name" text="Deplasman" wrapText="true" textAlignment="CENTER"/>
+                </VBox>
+            </HBox>
+
+            <HBox alignment="CENTER" styleClass="tab-header">
+                <Button fx:id="btnEvents" maxWidth="1.7976931348623157E308" onAction="#showEvents" styleClass="tab-button, active-tab" text="DETAY" HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnLineups" maxWidth="1.7976931348623157E308" onAction="#showLineups" styleClass="tab-button" text="KADRO" HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnStats" maxWidth="1.7976931348623157E308" onAction="#showStats" styleClass="tab-button" text="İSTATİSTİK" HBox.hgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+
+        <StackPane VBox.vgrow="ALWAYS">
+
+            <ScrollPane fx:id="paneEvents" fitToWidth="true" hbarPolicy="NEVER" styleClass="scroll-pane">
+                <content>
+                    <VBox fx:id="eventsContainer" alignment="TOP_CENTER" spacing="0" style="-fx-padding: 20;">
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+            <VBox fx:id="paneLineups" spacing="0" visible="false">
+                <HBox alignment="CENTER" spacing="15.0" style="-fx-padding: 10; -fx-background-color: #121212;">
+                    <Button fx:id="btnLineupHome" maxWidth="1.7976931348623157E308" onAction="#showHomeLineup" styleClass="lineup-toggle-active" text="Ev Sahibi" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnLineupAway" maxWidth="1.7976931348623157E308" onAction="#showAwayLineup" styleClass="lineup-toggle-inactive" text="Deplasman" HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <ScrollPane fx:id="scrollLineups" fitToWidth="true" hbarPolicy="NEVER" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+                    <content>
+                        <StackPane style="-fx-padding: 10;">
+                            <VBox fx:id="containerHomeLineup" spacing="5" styleClass="lineup-box" visible="true" />
+                            <VBox fx:id="containerAwayLineup" spacing="5" styleClass="lineup-box" visible="false" />
+                        </StackPane>
+                    </content>
+                </ScrollPane>
+            </VBox>
+
+            <ScrollPane fx:id="paneStats" fitToWidth="true" hbarPolicy="NEVER" styleClass="scroll-pane" visible="false">
+                <content>
+                    <VBox fx:id="statsContainer" spacing="15.0" style="-fx-padding: 20;">
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+        </StackPane>
+    </VBox>
+
+    <AnchorPane fx:id="menuOverlay" visible="false" style="-fx-background-color: rgba(0,0,0,0.5);" />
+    <StackPane alignment="CENTER_LEFT" pickOnBounds="false">
+        <fx:include fx:id="sidebarComponent" source="../SidebarView/Sidebar.fxml" />
+    </StackPane>
+    <VBox fx:id="loadingOverlay" alignment="CENTER" spacing="15" style="-fx-background-color: rgba(0, 0, 0, 0.85);" visible="false">
+        <ProgressIndicator style="-fx-progress-color: white;" />
+        <Label style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Maç Verileri Yükleniyor..." textFill="WHITE" />
+    </VBox>
+</StackPane>
