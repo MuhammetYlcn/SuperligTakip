@@ -20,10 +20,10 @@ Uygulama, sürdürülebilir ve modüler bir yapı için modern tasarım desenler
 
 | Teknoloji | Kullanım Amacı |
 | :--- | :--- |
-| **Java** | [cite_start]Ana Programlama Dili  |
-| **JavaFX & CSS** | [cite_start]Modern ve Dinamik Kullanıcı Arayüzü |
-| **SQLite** | [cite_start]Hızlı ve Yerel Veri Depolama |
-| **All Sports API** | [cite_start]Gerçek Zamanlı Veri Kaynağı |
+| **Java** | Ana Programlama Dili  |
+| **JavaFX & CSS** | Modern ve Dinamik Kullanıcı Arayüzü |
+| **SQLite** | Hızlı ve Yerel Veri Depolama |
+| **All Sports API** | Gerçek Zamanlı Veri Kaynağı |
 
 
 ---
