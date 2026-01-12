@@ -1,0 +1,226 @@
+/* --- GENEL AYARLAR --- */
+.root {
+    -fx-background-color: #121212;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* --- HEADER (ÜST KISIM) --- */
+.header-background {
+    -fx-background-color: linear-gradient(to bottom, #333333, #121212);
+}
+
+/* --- YENİ MİNİMALİST GERİ BUTONU --- */
+.back-button {
+    -fx-background-color: transparent; /* Varsayılan hali şeffaf */
+    -fx-background-radius: 50%;
+
+    /* Daha kibar boyutlar */
+    -fx-min-width: 32px;
+    -fx-min-height: 32px;
+    -fx-max-width: 32px;
+    -fx-max-height: 32px;
+
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+}
+
+/* Üzerine gelince hafif bir daire belirsin */
+.back-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tıklayınca biraz daha belirgin */
+.back-button:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ok İkonu Rengi */
+.back-icon {
+    -fx-fill: #b3b3b3; /* Normalde gri */
+}
+
+/* Üzerine gelince ikon beyazlaşsın */
+.back-button:hover .back-icon {
+    -fx-fill: white;
+}
+
+
+/* --- COMBOBOX (SEZON SEÇİMİ - TAM KARANLIK MOD) --- */
+.combo-box {
+    -fx-background-color: #2b2b2b;
+    -fx-background-radius: 6;
+    -fx-border-color: #444444;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+}
+
+.combo-box:hover {
+    -fx-background-color: #383838;
+    -fx-border-color: #666666;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-padding: 5 0 5 10;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #aaaaaa;
+}
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* --- AÇILAN LİSTE (POPUP) TASARIMI --- */
+.combo-box-popup .list-view {
+    -fx-background-color: #2b2b2b;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 5);
+    -fx-border-color: #444444;
+    -fx-border-width: 1;
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: #b3b3b3;
+    -fx-background-color: #2b2b2b;
+    -fx-padding: 8 10 8 10;
+}
+
+.combo-box-popup .list-cell:filled:hover {
+    -fx-background-color: #444444;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: #555555;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .scroll-bar:vertical .track {
+    -fx-background-color: #2b2b2b;
+}
+.combo-box-popup .scroll-bar:vertical .thumb {
+    -fx-background-color: #555555;
+}
+
+
+/* --- SEKME BUTONLARI --- */
+.tab-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #888888;
+    -fx-background-radius: 20;
+    -fx-border-color: #444444;
+    -fx-border-radius: 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 6 25 6 25;
+}
+
+.tab-button:selected {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-border-color: white;
+}
+
+.tab-button:hover {
+    -fx-border-color: #aaaaaa;
+    -fx-text-fill: #aaaaaa;
+}
+.tab-button:selected:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+/* --- FİKSTÜR LİSTESİ --- */
+.match-card {
+    -fx-background-color: #1f1f1f;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+    -fx-padding: 5;
+}
+
+.date-label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+.team-name-label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: normal;
+}
+
+.score-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-min-width: 40px;
+}
+
+.star-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-alignment: CENTER;
+}
+.star-button:hover {
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 215, 0, 0.3), 5, 0, 0, 0);
+}
+
+/* --- KADRO LİSTESİ TASARIMI --- */
+.squad-header {
+    -fx-text-fill: #b3b3b3;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5 10;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 1 0;
+    -fx-min-width: 300px;
+}
+
+.player-row {
+    -fx-background-color: #1f1f1f;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.player-name {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+}
+
+.player-pos-circle {
+    -fx-background-color: #333333;
+    -fx-text-fill: #b3b3b3;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-background-radius: 25;
+}
+.no-data-label {
+    -fx-text-fill: #b3b3b3;     /* Gri Yazı */
+    -fx-font-size: 15px;        /* Okunabilir Boyut */
+    -fx-font-weight: bold;      /* Kalın Font */
+    -fx-alignment: CENTER;      /* Yazıyı Ortala */
+    -fx-padding: 30;            /* Kenarlardan Boşluk */
+    -fx-background-color: transparent;
+}

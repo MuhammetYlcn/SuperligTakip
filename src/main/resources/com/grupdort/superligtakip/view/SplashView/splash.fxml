@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="20.0"
+      style="-fx-background-color: #121212;"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.grupdort.superligtakip.controller.SplashController">
+
+    <Label text="Süper Lig Takip" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <Label text="Veriler güncelleniyor, lütfen bekleyin..." textFill="#b3b3b3">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+    <ProgressIndicator style="-fx-progress-color: white;" prefHeight="50.0" prefWidth="50.0" />
+
+</VBox>

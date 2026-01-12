@@ -1,0 +1,147 @@
+/* =============================================================================
+   1. TABLO TASARIMI (DARK THEME)
+   ============================================================================= */
+
+/* Tablo Genel Arka Planı */
+.dark-table {
+    -fx-background-color: transparent;
+    -fx-base: #121212;
+    -fx-control-inner-background: #121212;
+    -fx-table-cell-border-color: transparent;
+}
+
+/* Başlık Satırı (Header) */
+.dark-table .column-header-background {
+    -fx-background-color: #262626;
+    -fx-padding: 5px;
+}
+
+.dark-table .column-header, .dark-table .filler {
+    -fx-background-color: transparent;
+    -fx-size: 35px; /* Başlık yüksekliği */
+    -fx-border-color: transparent;
+}
+
+.dark-table .column-header .label {
+    -fx-text-fill: #b3b3b3;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+/* Tablo Satırları */
+.dark-table .table-row-cell {
+    -fx-background-color: #121212; /* Satır rengi */
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 1 0; /* Sadece alt çizgi */
+}
+
+/* Satır Üzerine Gelince (Hover) ve Seçilince */
+.dark-table .table-row-cell:hover,
+.dark-table .table-row-cell:selected {
+    -fx-background-color: #2a2a2a;
+}
+
+/* Hücre İçi Yazılar */
+.dark-table .table-cell {
+    -fx-text-fill: #b3b3b3;
+    -fx-alignment: CENTER;
+}
+
+/* Takım İsimlerinin Olduğu Hücre (Sola Dayalı) */
+.dark-table .table-cell.align-left {
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* =============================================================================
+   2. SCROLLBAR DÜZELTMESİ (İNCE VE KOYU)
+   ============================================================================= */
+
+/* Arka Plan (Track) */
+.dark-table .scroll-bar:vertical,
+.dark-table .scroll-bar:vertical .track,
+.dark-table .scroll-bar:vertical .track-background {
+    -fx-background-color: #121212;
+    -fx-border-color: transparent;
+}
+
+/* Hareket Eden Çubuk (Thumb) */
+.dark-table .scroll-bar:vertical .thumb {
+    -fx-background-color: #333333;
+    -fx-background-radius: 5em;
+}
+.dark-table .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #444444;
+}
+
+/* Ok Butonları (Gizle veya Şeffaf Yap) */
+.dark-table .scroll-bar:vertical .increment-button,
+.dark-table .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.dark-table .scroll-bar:vertical .increment-arrow,
+.dark-table .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent; /* Okları gizledik, daha modern durur */
+}
+
+/* =============================================================================
+   3. COMBOBOX (SEZON SEÇİMİ)
+   ============================================================================= */
+
+.combo-box {
+    -fx-background-color: #333333;
+    -fx-background-radius: 5;
+    -fx-border-color: #555555;
+    -fx-border-radius: 5;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #b3b3b3;
+}
+
+/* Açılır Liste (Popup) */
+.combo-box-popup .list-view {
+    -fx-background-color: #2b2b2b;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 8, 0.0, 0, 0);
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: #e0e0e0;
+}
+
+.combo-box-popup .list-cell:filled:hover {
+    -fx-background-color: #444444;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: #505050;
+    -fx-text-fill: white;
+}
+
+/* =============================================================================
+   4. MENÜ BUTONLARI (SIDEBAR İÇİN)
+   ============================================================================= */
+
+.menu-item-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b3b3b3;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 15 12 15;
+    -fx-cursor: hand;
+}
+
+.menu-item-button:hover {
+    -fx-background-color: #262626;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-width: 0 0 0 3; /* Solda beyaz çubuk efekti */
+}

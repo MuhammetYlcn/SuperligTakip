@@ -1,0 +1,154 @@
+/* --- FİKSTÜR SAYFASI STİLLERİ --- */
+
+.root {
+    -fx-background-color: #121212;
+}
+
+/* ScrollPane Fix (Kaydırma çubuğu arkaplanını şeffaf yap) */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* =============================================================================
+   1. COMBOBOX TASARIMI (Sezon Seçimi)
+   ============================================================================= */
+
+.combo-box {
+    -fx-background-color: #333333;
+    -fx-background-radius: 5;
+    -fx-border-color: #555555;
+    -fx-border-radius: 5;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-padding: 3 0 3 10;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #b3b3b3;
+}
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* Açılır Liste (Popup) Tasarımı */
+.combo-box-popup .list-view {
+    -fx-background-color: #2b2b2b;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 8, 0.0, 0, 0);
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: #e0e0e0;
+    -fx-padding: 8 10 8 10;
+}
+
+.combo-box-popup .list-cell:filled:hover {
+    -fx-background-color: #444444;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: #505050;
+    -fx-text-fill: white;
+}
+
+/* =============================================================================
+   2. FİKSTÜR LİSTESİ TASARIMI
+   ============================================================================= */
+
+/* Hafta Değiştirme Alanı */
+.week-navigation-bar {
+    -fx-background-color: #1E1E1E;
+    -fx-padding: 10;
+    -fx-alignment: CENTER;
+    -fx-spacing: 20;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 1 0;
+}
+
+.week-nav-button {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 5 15 5 15;
+}
+.week-nav-button:hover {
+    -fx-background-color: #555555;
+}
+
+/* Tarih Başlığı */
+.date-header-label {
+    -fx-text-fill: #b3b3b3;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 15 5 5 5;
+}
+
+/* Maç Kartı */
+.match-card {
+    -fx-background-color: #1f1f1f;
+    -fx-background-radius: 8;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+.match-time {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+/* Takım İsmi (Uzun isimler için ayarlandı) */
+.team-name-label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: normal;
+}
+
+/* Skor Alanı */
+.score-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-min-width: 50px;
+}
+
+/* Yıldız Butonu */
+.star-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+/* =============================================================================
+   3. MENÜ BUTONLARI (Eksik Olan Kısım buydu)
+   ============================================================================= */
+
+.menu-item-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b3b3b3;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 15 12 15;
+    -fx-cursor: hand;
+}
+
+.menu-item-button:hover {
+    -fx-background-color: #262626;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-width: 0 0 0 3; /* Solda beyaz çubuk efekti */
+}

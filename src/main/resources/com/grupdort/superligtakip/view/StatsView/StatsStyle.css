@@ -1,0 +1,84 @@
+/* --- GENEL ARKA PLAN --- */
+.root {
+    -fx-background-color: #121212;
+}
+
+/* --- HEADER (ÜST BAR) --- */
+.header-background {
+    -fx-background-color: #1b1b1b;
+    -fx-border-color: #333;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* MENÜ İKONU (HAMBURGER) */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.menu-button SVGPath {
+    -fx-fill: white;
+}
+
+/* --- SIDEBAR MENÜ BUTONLARI (Fikstür Sayfasından Aktarılan) --- */
+.menu-item-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b3b3b3;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 15 12 20; /* Sol padding biraz artırıldı */
+    -fx-cursor: hand;
+}
+
+.menu-item-button:hover {
+    -fx-background-color: #262626;
+    -fx-text-fill: white;
+    /* Solda beyaz çubuk efekti */
+    -fx-border-color: white;
+    -fx-border-width: 0 0 0 3;
+}
+
+/* --- OYUNCU LİSTESİ (PLAYER CARD) --- */
+.player-card {
+    -fx-background-color: #1c1c1c;
+    -fx-border-color: #2a2a2a;
+    -fx-border-width: 0 0 1 0; /* Sadece alt çizgi */
+}
+
+.player-name {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.player-team {
+    -fx-text-fill: #888;
+    -fx-font-size: 12px;
+}
+
+.stat-goals {
+    -fx-text-fill: #2ecc71; /* Yeşil renk gol vurgusu */
+    -fx-font-weight: bold;
+}
+
+/* --- SCROLLPANE MODERNYEŞTİRME --- */
+.dark-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.dark-scroll .viewport {
+    -fx-background-color: #121212;
+}
+
+/* Kaydırma çubuğunun (ScrollBar) kendisini de koyulaştırmak istersen: */
+.dark-scroll .scroll-bar:vertical {
+    -fx-background-color: #121212;
+    -fx-width: 8;
+}
+
+.dark-scroll .scroll-bar .thumb {
+    -fx-background-color: #333;
+    -fx-background-radius: 5;
+}
