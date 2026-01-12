@@ -1,82 +1,51 @@
-🏆 Süper Lig Takip Uygulaması
-Süper Lig futbol verilerini anlık olarak takip eden, kullanıcı dostu arayüze sahip ve yüksek performanslı bir masaüstü uygulamasıdır. Türk futbolunu yakından takip etmek isteyen futbolseverler ve istatistik meraklıları için geliştirilmiştir.
+# 🏆 Süper Lig Takip Uygulaması
+
+[cite_start]**Süper Lig Takip**, Türk futbolunu yakından takip etmek isteyen kullanıcılar için tasarlanmış, yüksek performanslı bir JavaFX masaüstü uygulamasıdır. [cite: 8, 9]
+
+---
+
+## ✨ Öne Çıkan Özellikler
+
+* [cite_start]**📊 Dinamik Puan Durumu:** Şampiyonlar Ligi, Avrupa Ligi ve Küme Düşme potalarını özel renkli simgelerle gösteren canlı sıralama. [cite: 107, 108]
+* [cite_start]**🗓️ Akıllı Fikstür:** Haftalar arası hızlı dolaşım, geçmiş maç sonuçları ve gelecek maçların detaylı takvimi. [cite: 70, 80]
+* [cite_start]**📈 Gelişmiş Maç İstatistikleri:** Topla oynama, şut ve pas isabeti gibi verilerin dinamik progress bar'lar ile görselleştirilmesi. [cite: 183]
+* [cite_start]**⏱️ Kronolojik Maç Olayları:** Gol, kart ve oyuncu değişikliklerinin dakika bazlı "Event Tree" yapısında gösterimi. [cite: 182]
+* [cite_start]**🛡️ Takım & Oyuncu Analizi:** Mevkilere göre gruplandırılmış kadro yapısı ve rating bazlı oyuncu performans analizleri. [cite: 117, 118]
+
+---
+
+## 🛠️ Teknik Altyapı
+
+[cite_start]Uygulama, sürdürülebilir ve modüler bir yapı için modern tasarım desenleri üzerine inşa edilmiştir. [cite: 52]
+
+| Teknoloji | Kullanım Amacı |
+| :--- | :--- |
+| **Java** | [cite_start]Ana Programlama Dili [cite: 48] |
+| **JavaFX & CSS** | [cite_start]Modern ve Dinamik Kullanıcı Arayüzü [cite: 49] |
+| **SQLite** | [cite_start]Hızlı ve Yerel Veri Depolama [cite: 51] |
+| **All Sports API** | [cite_start]Gerçek Zamanlı Veri Kaynağı [cite: 51, 278] |
 
 
+---
 
-🚀 Özellikler
+## 🧠 Akıllı Veri Yönetimi (Cache)
 
-Anlık Puan Durumu: Şampiyonlar Ligi, Avrupa Ligi ve küme düşme potalarını gösteren görsel göstergelerle güncel sıralama.
+[cite_start]Uygulama, API limitlerini korumak ve hızı artırmak için **"Önce Yerel Veri"** stratejisini kullanır: [cite: 57]
+* [cite_start]**Hız:** Her sayfa geçişinde ağ gecikmesi yaşanmaması için veriler önce yerel veritabanından (`superlig.db`) okunur. [cite: 59, 60]
+* [cite_start]**Verimlilik:** Belirlenen güncelleme süresi (1-2 saat) dolmadan API'ye tekrar istek atılmaz. [cite: 61]
 
+---
 
+## 📐 Veritabanı Mimarisi
 
-Dinamik Fikstür: Haftalar arası kolay geçiş, geçmiş maç skorları ve gelecek maç takvimi.
+[cite_start]Sistem, toplam **11 ilişkisel tablo** üzerinden veri tutarlılığını sağlar: [cite: 255]
+* [cite_start]**Kadrolar:** `Teams`, `Players` ve `MatchLineups`. [cite: 256, 257, 262]
+* [cite_start]**Maç Detayları:** `Fixtures`, `MatchStatistics` ve `Events`. [cite: 260, 263, 264]
+* [cite_start]**Takip:** `Standings` ve `LastUpdates`. [cite: 265, 266]
 
+---
 
+## 🚀 Zorluklar ve Çözümler
 
-Detaylı Maç İstatistikleri: Topla oynama, şut sayıları ve pas isabeti gibi verilerin "Progress Bar"lar ile görselleştirilmesi.
-
-
-Maç Olay Ağacı: Goller, kartlar ve oyuncu değişikliklerinin kronolojik gösterimi.
-
-
-Takım ve Oyuncu Analizi: Takım kadroları, oyuncu mevkileri ve detaylı performans istatistikleri (yaş, gol, asist, rating vb.).
-
-
-İstatistik Liderleri: Gol ve asist krallığında zirvedeki oyuncuların takibi.
-
-🛠️ Teknik Mimari ve Teknolojiler
-Uygulama, modern yazılım prensipleri ve katmanlı mimari kullanılarak inşa edilmiştir.
-
-
-
-Programlama Dili: Java.
-
-
-Arayüz: JavaFX & CSS (Modern ve dinamik kullanıcı deneyimi için).
-
-
-Veritabanı: SQLite (Hızlı yerel depolama ve çevrimdışı erişim desteği).
-
-
-
-Veri Kaynağı: All Sports API.
-
-
-
-Tasarım Desenleri: MVC (Model-View-Controller), DAO (Data Access Object) ve DTO (Data Transfer Object).
-
-🧠 Akıllı Veri Yönetimi (Cache Sistemi)
-Uygulama, "Önce Yerel Veri" ilkesini kullanarak ağ gecikmelerini minimize eder ve API limitlerini verimli kullanır:
-
-
-Performans: Her sayfa geçişinde API'ye istek atmak yerine veriler SQLite üzerinden çekilir.
-
-
-Optimizasyon: Uygulama açılışında veriler senkronize edilerek yerel veritabanına kaydedilir.
-
-
-Güncelleme Mantığı: Belirlenen süre (1-2 saat) dolmadan yeni API isteği atılmaz, böylece kota korunur.
-
-📊 Veritabanı Şeması
-Sistemde toplam 11 adet ilişkisel tablo bulunmaktadır:
-
-
-Teams & Players: Takım ve oyuncu bilgileri.
-
-
-Fixtures & Events: Maç takvimi ve maç içi önemli olaylar.
-
-
-
-MatchLineups & Statistics: Kadrolar ve detaylı maç sonu istatistikleri.
-
-
-LastUpdates: Veri güncelliğini takip eden kontrol tablosu.
-
-🛠️ Karşılaşılanan Zorluklar ve Çözümler
-
-Kota Yönetimi: Ücretsiz API kısıtlamalarını aşmak için daha kapsamlı veri sağlayan All Sports API'ye geçiş yapılarak veri doğruluğu artırılmıştır.
-
-
-
-Veri Çoğullaması: API'den gelen mükerrer maç kayıtlarını önlemek için "Smart ID Mapping" algoritması geliştirilmiştir. Bu algoritma Ev Sahibi, Deplasman ve Hafta bilgilerini kontrol ederek veritabanındaki veri kirliliğini engeller.
+* [cite_start]**Kota ve Veri Sorunu:** API-Football kısıtlamaları nedeniyle daha geniş kapsamlı olan **All Sports API** platformuna geçiş yapılmıştır. [cite: 275, 278]
+* [cite_start]**Veri Temizleme (Smart ID Mapping):** Bazı maçların mükerrer (çift) gelmesini engellemek için Ev Sahibi + Deplasman + Hafta kontrolü yapan özel bir algoritma geliştirilmiştir. [cite: 283, 284]
